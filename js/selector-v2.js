@@ -3,7 +3,7 @@
 // ========================================
 const SUPABASE_URL  = 'https://nzpujmlienzfetqcgsxz.supabase.co';
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56cHVqbWxpZW56ZmV0cWNnc3h6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2ODYzMzYsImV4cCI6MjA5MDI2MjMzNn0.xl3lsb-KYj5tVLKTnzpbsdEGoV9ySnswH4eyRuyEH1s';
-const EVENTO_SLUG   = 'sesion-saul-karen';
+const EVENTO_SLUG   = 'sesion-blanca-estevez';
 const SB_HEADERS    = { 'apikey': SUPABASE_ANON, 'Authorization': `Bearer ${SUPABASE_ANON}`, 'Content-Type': 'application/json' };
 
 function getSessionId() {
@@ -37,7 +37,7 @@ async function sbRegistrarVisita(pagina = 'selector') {
 }
 
 // ========================================
-// GLOBAL VARIABLES - Boda Saul y Karen
+// GLOBAL VARIABLES - Boda Familia Estevez
 // ========================================
 const photos = [];
 // Lista de fotos: se llena despues del evento (7 nov 2026) con generate_photos_array.py
@@ -49,8 +49,8 @@ function getThumbPath(fullPath) {
 
 // ── Configuración del evento ──
 const CONFIG = {
-    slug:               'sesion-saul-karen',
-    nombre:             (window.EVENT_CONFIG && window.EVENT_CONFIG.nombre)             || 'Saul y Karen',
+    slug:               'sesion-blanca-estevez',
+    nombre:             (window.EVENT_CONFIG && window.EVENT_CONFIG.nombre)             || 'Familia Estevez',
     telefono:           (window.EVENT_CONFIG && window.EVENT_CONFIG.telefono)           || '',
     fechaEvento:        (window.EVENT_CONFIG && window.EVENT_CONFIG.fechaEvento)        || new Date(2026, 10, 7, 13, 0, 0),
     limiteImpresion:    100,
@@ -663,7 +663,7 @@ function exportToJSON() {
     const costoExtra = fotosAdicionales * COSTO_FOTO_ADICIONAL;
 
     const exportData = {
-        evento: 'Boda Saul y Karen',
+        evento: 'Boda Familia Estevez',
         fecha_exportacion: new Date().toISOString(),
         total_fotos: photos.length,
         estadisticas: stats,
@@ -690,7 +690,7 @@ function exportToJSON() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `seleccion-fotos-sesion-saul-karen-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `seleccion-fotos-sesion-blanca-estevez-${new Date().toISOString().split('T')[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
 

@@ -1,8 +1,8 @@
-// Contador de visitas - Boda Saul y Karen
+// Contador de visitas - Boda Familia Estevez
 (function () {
     const SUPABASE_URL = 'https://nzpujmlienzfetqcgsxz.supabase.co';
     const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56cHVqbWxpZW56ZmV0cWNnc3h6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2ODYzMzYsImV4cCI6MjA5MDI2MjMzNn0.xl3lsb-KYj5tVLKTnzpbsdEGoV9ySnswH4eyRuyEH1s';
-    const EVENTO_SLUG = 'sesion-saul-karen';
+    const EVENTO_SLUG = 'sesion-blanca-estevez';
     const SB_H = { 'apikey': SUPABASE_ANON, 'Authorization': `Bearer ${SUPABASE_ANON}`, 'Content-Type': 'application/json' };
 
     const SESSION_KEY = 'foro7_sid';
