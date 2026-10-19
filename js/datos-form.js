@@ -274,6 +274,7 @@
   async function sbFetch(path, opts) {
     const r = await fetch(SB_URL + path, { headers: H, ...opts });
     const txt = await r.text();
+    if (!r.ok) throw new Error(`Supabase ${r.status}: ${txt}`);
     return txt ? JSON.parse(txt) : [];
   }
 

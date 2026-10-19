@@ -172,11 +172,12 @@ async function sbSyncSelections() {
         }
     }));
     if (rows.length === 0) return;
-    await fetch(`${SUPABASE_URL}/rest/v1/selecciones?on_conflict=evento_id,foto_index`, {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/selecciones?on_conflict=evento_id,foto_index`, {
         method: 'POST',
         headers: { ...SB_HEADERS, 'Prefer': 'resolution=merge-duplicates,return=minimal' },
         body: JSON.stringify(rows)
     });
+    if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
 }
 
 function swipeSaveAndNext() {
